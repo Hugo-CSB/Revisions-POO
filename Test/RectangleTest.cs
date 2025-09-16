@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
 
-namespace Geometrique.Test
+public class RectangleTests
 {
-    internal class RectangleTest
+    [Fact]
+    public void Perimetre_CalculatesCorrectly()
     {
+        var r = new Rectangle(new Point(0, 0), 10, 5);
+        Assert.Equal(30, r.Perimetre());
+    }
+
+    [Fact]
+    public void Aire_CalculatesCorrectly()
+    {
+        var r = new Rectangle(new Point(0, 0), 10, 5);
+        Assert.Equal(50, r.Aire());
+    }
+
+    [Fact]
+    public void Propriete_Longueur_Largeur()
+    {
+        var r = new Rectangle(new Point(0, 0), 10, 5);
+        Assert.Equal(10, r.Longueur);
+        Assert.Equal(5, r.Largeur);
     }
 }

@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xunit;
+using System;
 
-namespace Geometrique.Test
+public class CercleTests
 {
-    internal class CercleTest
+    [Fact]
+    public void Perimetre_CalculatesCorrectly()
     {
+        var c = new Cercle(new Point(0, 0), 10);
+        Assert.Equal(2 * Math.PI * 10, c.Perimetre(), 10);
+    }
+
+    [Fact]
+    public void Aire_CalculatesCorrectly()
+    {
+        var c = new Cercle(new Point(0, 0), 10);
+        Assert.Equal(Math.PI * 100, c.Aire(), 10);
+    }
+
+    [Fact]
+    public void Propriete_Rayon()
+    {
+        var c = new Cercle(new Point(0, 0), 5);
+        Assert.Equal(5, c.Rayon);
     }
 }
